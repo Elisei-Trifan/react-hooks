@@ -1,4 +1,6 @@
+import Hover from './components/Hover'
 import useInput from './hooks/useInput'
+import { useRef, useState } from 'react'
 
 function App() {
   const userName = useInput('')
@@ -11,6 +13,8 @@ function App() {
       <button onClick={() => console.log(userName.value, password.value)}>
         Click
       </button>
+      <hr />
+      <Hover />
     </div>
   )
 }
