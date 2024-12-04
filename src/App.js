@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Hover from './components/Hover'
 import useInput from './hooks/useInput'
 import { useRef, useState } from 'react'
