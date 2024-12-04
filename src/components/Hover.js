@@ -5,8 +5,6 @@ const Hover = () => {
   const referens = useRef()
   const isHovering = useHover(referens)
 
-  console.log(isHovering)
-
   return (
     <div
       ref={referens}
