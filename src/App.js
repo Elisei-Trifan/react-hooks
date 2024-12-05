@@ -8,9 +8,23 @@ import { useRef, useState } from 'react'
 function App() {
   const userName = useInput('')
   const password = useInput('')
+  const [value, setValue] = useState('')
+
+  function search(query) {
+    fetch(`https://jsonplaceholder.typicode.com/todos?_query=` + query)
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json)
+      })
+  }
+
+  function handleChange(e) {
+    setValue(e.target.value)
+    search(e.target.value)
+  }
 
   return (
-    <div className="App">
+    <div className="App" style={{ minHeight: '200vh' }}>
       <input {...userName} type="text" placeholder="userName"></input>
       <input {...password} type="text" placeholder="password"></input>
       <button onClick={() => console.log(userName.value, password.value)}>
@@ -20,6 +34,8 @@ function App() {
       <Hover />
       <hr />
       <List />
+      <hr />
+      <input type="text" value={value} onChange={handleChange} />
     </div>
   )
 }
