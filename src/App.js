@@ -3,6 +3,7 @@ import Debounce from './components/Debounce'
 import Hover from './components/Hover'
 import List from './components/List'
 import Login from './components/Login'
+import Request from './components/Request'
 import useDebounce from './hooks/useDebounce'
 import { useRef, useState } from 'react'
 
@@ -16,6 +17,8 @@ function App() {
       <List />
       <hr />
       <Debounce />
+      <hr />
+      <Request />
     </div>
   )
 }
