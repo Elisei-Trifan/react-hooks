@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import Hover from './components/Hover'
+import List from './components/List'
 import useHover from './hooks/useHover'
 import useInput from './hooks/useInput'
 import { useRef, useState } from 'react'
@@ -18,6 +19,7 @@ function App() {
       <hr />
       <Hover />
       <hr />
+      <List />
     </div>
   )
 }
