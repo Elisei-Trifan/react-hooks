@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import Hover from './components/Hover'
 import List from './components/List'
+import useDebounce from './hooks/useDebounce'
 import useHover from './hooks/useHover'
 import useInput from './hooks/useInput'
 import { useRef, useState } from 'react'
@@ -9,6 +10,7 @@ function App() {
   const userName = useInput('')
   const password = useInput('')
   const [value, setValue] = useState('')
+  const debouncedSearch = useDebounce(search, 500)
 
   function search(query) {
     fetch(`https://jsonplaceholder.typicode.com/todos?_query=` + query)
@@ -20,7 +22,7 @@ function App() {
 
   function handleChange(e) {
     setValue(e.target.value)
-    search(e.target.value)
+    debouncedSearch(e.target.value)
   }
 
   return (
